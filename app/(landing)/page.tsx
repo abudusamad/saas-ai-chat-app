@@ -1,7 +1,9 @@
+import { LandingNavbar } from "./_components/landing-navbar";
+
 const LandingPage = () => {
     return ( 
-        <div>
-            Landing Page
+        <div className="h-full">
+            <LandingNavbar/>
         </div>
      );
 }
