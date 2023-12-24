@@ -1,62 +1,10 @@
 "use client";
 
 import Logo from "@/components/Logo";
-import {
-	Code,
-	ImageIcon,
-	LayoutDashboard,
-	MessageSquare,
-	Music,
-	Settings,
-	VideoIcon,
-} from "lucide-react";
+import { tools } from "@/config/constant";
 import Link from "next/link";
-import SidebarItem from "./sidebar-item";
 import { useEffect, useState } from "react";
-
-export const routes = [
-	{
-		label: "Dashboard",
-		href: "/dashboard",
-		icon: LayoutDashboard,
-		color: "text-sky-700",
-	},
-	{
-		label: "Conversation",
-		href: "/conversation",
-		icon: MessageSquare,
-		color: "text-violet-500",
-	},
-	{
-		label: "Image Generation",
-		href: "/image",
-		icon: ImageIcon,
-		color: "text-pink-700",
-	},
-	{
-		label: "Video Generation",
-		icon: VideoIcon,
-		color: "text-orange-700",
-		href: "/video",
-	},
-	{
-		label: "Music Generation",
-		icon: Music,
-		color: "text-emerald-500",
-		href: "/music",
-	},
-	{
-		label: "Code Generation",
-		icon: Code,
-		color: "text-green-700",
-		href: "/code",
-	},
-	{
-		label: "Settings",
-		icon: Settings,
-		href: "/settings",
-	},
-];
+import SidebarItem from "./sidebar-item";
 
 const Sidebar = () => {
 	const [isMounted, setIsMounted] = useState(false);
@@ -77,7 +25,7 @@ const Sidebar = () => {
 					</div>
 				</Link>
 				<div className="spacy-y-1">
-					{routes.map((route) => (
+					{tools.map((route) => (
 						<Link key={route.href} href={route.href}>
 							<SidebarItem
 								icon={route.icon}
