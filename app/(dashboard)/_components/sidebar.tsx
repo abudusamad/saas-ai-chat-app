@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { SidebarItem } from "./sidebar-item";
 
-
 const Sidebar = () => {
 	const [isMounted, setIsMounted] = useState(false);
 	useEffect(() => {

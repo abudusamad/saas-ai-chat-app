@@ -15,7 +15,7 @@ const MobileSidebar = () => {
 	const isOPen = useMobileSidebar((state) => state.isOpen);
 	const onClose = useMobileSidebar((state) => state.onClose);
 
-	const isSmallScreen = useMedia("(max-width: 768px)");
+	const isSmallScreen = useMedia("(max-width: 768px)", false);
 
 	useEffect(() => {
 		setIsMounted(true);
