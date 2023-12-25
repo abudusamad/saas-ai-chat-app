@@ -1,5 +1,6 @@
 import { UserButton } from "@clerk/nextjs";
 import MobileSidebar from "./mobile-sidebar";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const Navbar = () => {
 	return (
@@ -11,3 +12,13 @@ export const Navbar = () => {
 		</div>
 	);
 };
+
+Navbar.Skeleton = function SkeletonNavbar() {
+    return (
+        <div className="flex items-center p-4">
+            <div className="flex w-full justify-end">
+                <Skeleton className="w-8 h-8 rounded-full"/>
+            </div>
+        </div>
+    );
+}

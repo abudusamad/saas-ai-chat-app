@@ -11,7 +11,7 @@ interface SidebarItemProps {
     color?: string;
     href?: string;
 }
-const SidebarItem = ({ label, icon: Icon, color,href }: SidebarItemProps) => {
+export const SidebarItem = ({ label, icon: Icon, color,href }: SidebarItemProps) => {
 	const pathname = usePathname();
 
 	return (
@@ -29,4 +29,3 @@ const SidebarItem = ({ label, icon: Icon, color,href }: SidebarItemProps) => {
 	);
 };
 
-export default SidebarItem;
