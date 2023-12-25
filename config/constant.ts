@@ -1,8 +1,15 @@
-import { Code, ImageIcon, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
+import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
 
 export const MAX_FREE_COUNTS = 5;
 
 export const tools = [
+	{
+		label: "Dashboard",
+		icon: LayoutDashboard,
+		href: "/dashboard",
+		color: "text-sky-500",
+		bgColor: "bg-sky-500/10",
+	},
 	{
 		label: "Conversation",
 		icon: MessageSquare,
