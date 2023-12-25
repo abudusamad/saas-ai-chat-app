@@ -71,3 +71,26 @@ body,
 		--ring: 212.7 26.8% 83.9%;
 	}
 }
+
+@keyframes dots {
+	0%,
+	20% {
+		opacity: 0;
+	}
+	50%,
+	100% {
+		opacity: 1;
+	}
+}
+
+.animate-dots {
+	animation: dots 1s linear infinite;
+}
+
+.delay-200 {
+	animation-delay: 0.2s;
+}
+
+.delay-400 {
+	animation-delay: 0.4s;
+}
