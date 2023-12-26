@@ -12,7 +12,7 @@ import Loader from "@/components/Loader";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { MessageSquare } from "lucide-react";
+import { Code, MessageSquare } from "lucide-react";
 import { useState } from "react";
 
 import axios from "axios";
@@ -54,11 +54,11 @@ const ConversationPage = () => {
 	return (
 		<div>
 			<Heading
-				title="Conversation"
-				description="Our most advavnaced AI model yet."
-				icon={MessageSquare}
-				iconColor="text-violet-500"
-				bgColor="bg-violet-500/10"
+				title="Code"
+				description="Generate code using our AI."
+				icon={Code}
+				iconColor="text-green-700"
+				bgColor="bg-green-700/10"
 			/>
 			<div className="px-4 lg:px-8">
 				<div>
@@ -71,7 +71,7 @@ const ConversationPage = () => {
 										<FormControl className="m-0 p-0">
 											<Input
 												className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
-												placeholder="How to calulate the area of a circle?"
+												placeholder="Simple toggle button using reat hooks"
 												disabled={isLoading}
 												{...field}
 											/>
