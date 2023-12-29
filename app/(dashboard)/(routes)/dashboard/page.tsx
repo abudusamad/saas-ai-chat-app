@@ -52,8 +52,8 @@ export default function Home() {
 Home.Sketelon = function HomeSkeleton() {
 	return (
 		<div>
-			<div className="mb-8 space-y-4">
-				<Skeleton className="h-12 w-48" />
+			<div className="mb-8 space-y-16 flex items-center justify-center">
+				<Skeleton className="h-16 w-48 " />
 				<Skeleton className="h-8 w-64" />
 			</div>
 			<div className="px-4 md:px-20 lg:px-32 space-y-4">

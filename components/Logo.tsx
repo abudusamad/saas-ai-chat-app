@@ -7,7 +7,7 @@ const font = Montserrat({ weight: "700", subsets: ["latin"] });
 const Logo = () => {
 	return (
 		<div className="relative h-8 w-8">
-			<Image fill alt="Logo" src="/logo.svg" />
+			<Image fill alt="Logo" src="/logo.svg" className="text-sm"/>
 
 			<h1 className={cn("text-2xl font-bold text-white ml-10", font.className)}>
 				Chatbot
