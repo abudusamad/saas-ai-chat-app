@@ -15,18 +15,20 @@ import { Input } from "@/components/ui/input";
 import { MessageSquare } from "lucide-react";
 import { useState } from "react";
 
+import OpenAI from "openai";
+
 import axios from "axios";
 
 const ConversationPage = () => {
-    const router = useRouter();
+	const router = useRouter();
     const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
-
+	
 	const formSchema = z.object({
 		prompt: z.string().min(1, {
 			message: "Prompt must be at least 1 character long",
 		}),
 	});
-
+	
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -37,13 +39,21 @@ const ConversationPage = () => {
 	const isLoading = form.formState.isSubmitting;
 
 	const onSubmit = async (data: z.infer<typeof formSchema>) => {
-        try {
-            const userMessage: ChatCompletionRequestMessage = {content: data.prompt };
-            const newMessage = [...messages, userMessage];
-
-            const response = await axios.post("/api/conversation", { messages: newMessage });
-            setMessages((prev) => [...prev, userMessage, response.data])
-            console.log(data);
+		try {
+			const openai = new OpenAI();
+            const completion = await openai.chat.completions.create({
+							messages: [
+								{
+									role: "system",
+									content:
+										"You are a helpful assistant designed to output JSON.",
+								},
+								{ role: "user", content: "Who won the world series in 2020?" },
+							],
+							model: "gpt-3.5-turbo-1106",
+							response_format: { type: "json_object" },
+						});
+						console.log(completion.choices[0].message.content);
 		} catch (error: any) {
 			console.log(error);
 		} finally {
